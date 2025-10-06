@@ -1,0 +1,13 @@
+[Unit]
+Description=Swww Daemon Service
+After=graphical-session.target
+
+[Service]
+Type=exec
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "Hyprland" ""
+ExecStart=swww-daemon
+Restart=on-failure
+Slice=background-graphical.slice
+
+[Install]
+WantedBy=graphical-session.target

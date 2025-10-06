@@ -1,0 +1,12 @@
+[Unit]
+Description=wallpaper change utility based on time
+After=swww.service
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/home/charlos/bin/time-paper.sh
+Environment=PATH=/home/carlos/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+[Install]
+WantedBy=graphical-session.target

@@ -1,0 +1,8 @@
+[Unit]
+Description=Run time-paper every 30 minutes
+
+[Timer]
+OnCalendar=*-*-* *:0/30:00
+
+[Install]
+WantedBy=timers.target
