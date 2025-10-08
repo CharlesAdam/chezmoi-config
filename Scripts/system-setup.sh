@@ -22,7 +22,7 @@ fi
 sudo pacman -S --needed waybar hyprlock dunst wofi
 
 #Setup Tools
-sudo pacman -S --needed neovim htop alacritty git zoxide firefox chezmoi wget man
+sudo pacman -S --needed neovim htop alacritty git zoxide firefox chezmoi wget man unzip
 
 #Setup Fonts
 sudo pacman -S --needed ttf-sharetech-mono-nerd
@@ -32,4 +32,11 @@ if systemctl is-active --quiet 'ly.service'; then
 fi
 
 #Setup Extra
-sudo pacman -S --needed spotify-player lazygit feh openssl
+sudo pacman -S --needed spotify-player lazygit feh openssl cava
+
+## Setup gnome-keyring
+
+sudo pacman -S --needed gnome-keyring seahorse
+systemctl --user enable gcr-ssh-agent.socket
+systemctl --user start gcr-ssh-agent.socket
+### To Add Keys execute /usr/lib/seahorse/ssh-askpass <KEY FILE>
