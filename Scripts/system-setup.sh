@@ -18,11 +18,14 @@ if service_exists ly; then
   sudo systemctl enable ly.service
 fi
 
-#Setup Extra DE Tools
-sudo pacman -S --needed waybar hyprlock dunst wofi
+#Setup Development Environment
+sudo pacman -S --needed neovim alacritty git chezmoi docker
 
 #Setup Tools
-sudo pacman -S --needed neovim htop alacritty git zoxide firefox chezmoi wget man unzip
+sudo pacman -S --needed htop zoxide firefox wget man unzip
+
+#Setup Extra DE Tools
+sudo pacman -S --needed waybar hyprlock dunst wofi
 
 #Setup Fonts
 sudo pacman -S --needed ttf-sharetech-mono-nerd
