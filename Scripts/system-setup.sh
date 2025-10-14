@@ -10,10 +10,10 @@ service_exists() {
 }
 
 #Setup DE
-sudo pacman -S --needed xdg-desktop-portal hyprland xdg-desktop-portal-hyprland uwsm libnewt
+sudo pacman -S --needed xdg-desktop-portal hyprland xdg-desktop-portal-hyprland uwsm libnewt wl-clipboard swww
 
 #Setup Login Manager
-if service_exists ly; then
+if ! service_exists ly; then
   sudo pacman -S --needed ly
   sudo systemctl enable ly.service
 fi
@@ -28,9 +28,9 @@ sudo pacman -S --needed htop zoxide firefox wget man unzip
 sudo pacman -S --needed waybar hyprlock dunst wofi
 
 #Setup Fonts
-sudo pacman -S --needed ttf-sharetech-mono-nerd
+sudo pacman -S --needed ttf-sharetech-mono-nerd noto-fonts
 
-if systemctl is-active --quiet 'ly.service'; then
+if ! systemctl is-active --quiet 'ly.service'; then
   sudo systemctl start ly.service
 fi
 
@@ -42,4 +42,5 @@ sudo pacman -S --needed spotify-player lazygit feh openssl cava
 sudo pacman -S --needed gnome-keyring seahorse
 systemctl --user enable gcr-ssh-agent.socket
 systemctl --user start gcr-ssh-agent.socket
+
 ### To Add Keys execute /usr/lib/seahorse/ssh-askpass <KEY FILE>
