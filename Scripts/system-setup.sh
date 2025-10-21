@@ -28,7 +28,8 @@ sudo pacman -S --needed htop zoxide firefox wget man unzip
 sudo pacman -S --needed waybar hyprlock dunst wofi
 
 #Setup Fonts
-sudo pacman -S --needed ttf-sharetech-mono-nerd noto-fonts
+sudo pacman -S --needed ttf-sharetech-mono-nerd
+sudo pacman -S --needed noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 
 if ! systemctl is-active --quiet 'ly.service'; then
   sudo systemctl start ly.service

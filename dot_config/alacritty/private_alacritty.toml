@@ -18,7 +18,8 @@ action = "ScrollLineDown"
 key = "PageDown"
 
 [window]
-opacity = 0.75
+opacity = 0.95
+blur = true
 padding = {x = 5, y = 5}
 
 [general]
