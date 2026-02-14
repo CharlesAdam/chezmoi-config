@@ -36,7 +36,7 @@ if ! systemctl is-active --quiet 'ly.service'; then
 fi
 
 #Setup Extra
-sudo pacman -S --needed spotify-player lazygit feh openssl cava
+sudo pacman -S --needed spotify-player lazygit feh openssl cava grim slurp
 
 ## Setup gnome-keyring
 
