@@ -15,7 +15,7 @@ sudo pacman -S --needed xdg-desktop-portal hyprland xdg-desktop-portal-hyprland 
 #Setup Login Manager
 if ! service_exists ly; then
   sudo pacman -S --needed ly
-  sudo systemctl enable ly.service
+  sudo systemctl enable --now ly@tty1.service
 fi
 
 #Setup Development Environment
@@ -32,7 +32,7 @@ sudo pacman -S --needed ttf-sharetech-mono-nerd
 sudo pacman -S --needed noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 
 if ! systemctl is-active --quiet 'ly.service'; then
-  sudo systemctl start ly.service
+  sudo systemctl start ly@tty1.service
 fi
 
 #Setup Extra
