@@ -14,33 +14,33 @@ sudo pacman -Sy --noconfirm --needed xdg-desktop-portal hyprland xdg-desktop-por
 
 #Setup Login Manager
 if ! service_exists ly; then
-  sudo pacman -Sy --noconfirm --needed ly
+  sudo pacman -S --noconfirm --needed ly
   sudo systemctl enable --now ly@tty1.service
 fi
 
 #Setup Development Environment
-sudo pacman -Sy --noconfirm --needed neovim alacritty git chezmoi docker
+sudo pacman -S --noconfirm --needed neovim alacritty git chezmoi docker
 
 #Setup Tools
-sudo pacman -Sy --noconfirm --needed htop zoxide firefox wget man unzip
+sudo pacman -S --noconfirm --needed htop zoxide firefox wget man unzip
 
 #Setup Extra DE Tools
-sudo pacman -Sy --noconfirm --needed waybar hyprlock dunst wofi
+sudo pacman -S --noconfirm --needed waybar hyprlock dunst wofi
 
 #Setup Fonts
-sudo pacman -Sy --noconfirm --needed ttf-sharetech-mono-nerd
-sudo pacman -Sy --noconfirm --needed noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+sudo pacman -S --noconfirm --needed ttf-sharetech-mono-nerd
+sudo pacman -S --noconfirm --needed noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 
 if ! systemctl is-active --quiet 'ly.service'; then
   sudo systemctl start ly@tty1.service
 fi
 
 #Setup Extra
-sudo pacman -Sy --noconfirm --needed spotify-player lazygit feh openssl cava grim slurp
+sudo pacman -S --noconfirm --needed spotify-player lazygit feh openssl cava grim slurp
 
 ## Setup gnome-keyring
 
-sudo pacman -Sy --noconfirm --needed gnome-keyring seahorse
+sudo pacman -S --noconfirm --needed gnome-keyring seahorse
 systemctl --user enable gcr-ssh-agent.socket
 systemctl --user start gcr-ssh-agent.socket
 
