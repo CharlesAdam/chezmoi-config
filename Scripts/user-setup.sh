@@ -8,3 +8,6 @@ systemctl --user enable --now gcr-ssh-agent.socket
 systemctl --user enable --now swww.service
 systemctl --user enable --now waybar.service
 systemctl --user enable --now time-paper.service
+
+# Polkit
+systemctl --user enable --now hyprpolkitagent.service
